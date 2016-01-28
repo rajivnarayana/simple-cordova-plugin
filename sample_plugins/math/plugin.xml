@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.hertz.simple-math"
+      version="0.1.0">
+
+    <name>Simple Math plugin</name>
+    <description>A simple map plugin for demo.</description>
+
+    <engines>
+    	<engine name="cordova" version=">=3.4.0"/>
+  	</engines>
+
+  	<js-module src="www/simple-math.js" name="SimpleMath">
+        <clobbers target="window.plugins.math"/>
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+		<feature name="SimpleMath">
+			<param name="ios-package" value="SimpleMath"/>
+		</feature>
+        </config-file>
+
+        <header-file src="src/ios/SimpleMath.h" />
+        <source-file src="src/ios/SimpleMath.m" />
+
+    </platform>
+
+    <platform name="android">
+    	<config-file target="res/xml/config.xml" parent="/*">
+	    	<feature name="SimpleMath">
+	    		<param name="android-package" value="com.hertz.math.SimpleMath" />
+	    	</feature>
+    	</config-file>
+    	<source-file src="src/android/SimpleMath.java" target-dir="src/com/hertz/math/" />
+    </platform>
+</plugin>
