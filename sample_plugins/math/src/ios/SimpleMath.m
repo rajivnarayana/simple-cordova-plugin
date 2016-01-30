@@ -1,6 +1,6 @@
 #import "SimpleMath.h"
 
-@interface SimpleMath
+@implementation SimpleMath
 
 - (void) add:(CDVInvokedUrlCommand*)command {
 	NSString* callbackId = [command callbackId];
